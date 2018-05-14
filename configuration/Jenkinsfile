@@ -47,7 +47,7 @@ pipeline {
         script {
           openshift.withCluster() {
             openshift.withProject(env.DEV_PROJECT) {
-              openshift.newBuild("--name=tasks", "--image-stream=openshift/wildfly-100-centos7", "--binary=true")
+              openshift.newBuild("--name=tasks", "--image-stream=openshift/wildfly:10.1", "--binary=true")
             }
           }
         }
